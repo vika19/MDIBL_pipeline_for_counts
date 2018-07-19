@@ -1,0 +1,12 @@
+#!/bin/bash
+#PBS -k oe
+#PBS -N htseq&
+#PBS -l nodes=1:ppn=1,vmem=10gb,walltime=01:00:00
+
+module load htseq/0.9.1 
+
+stub=
+gff=/N/dc2/scratch/ss93/shared_files/mdibl/MDIBL_2018/Reference/dpulex_genes.gff
+
+echo $stub
+htseq-count -f bam -r pos -s no -m intersection-nonempty -t exon -i Parent /N/dc2/scratch/ss93/shared_files/mdibl/MDIBL_2018/Mapping/SamFiles/$stub.sort.bam $gff > /N/dc2/scratch/ss93/shared_files/mdibl/MDIBL_2018/Counts/$stub.counts
