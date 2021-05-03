@@ -6,7 +6,7 @@
 module load htseq/0.9.1 
 
 stub=
-gff=/N/dc2/scratch/ss93/shared_files/mdibl/MDIBL_2018/Reference/dpulex_genes.gff
+gff=../Reference/dpulex_genes.gff
 
 echo $stub
-htseq-count -f bam -r pos -s no -m intersection-nonempty -t exon -i Parent /N/dc2/scratch/ss93/shared_files/mdibl/MDIBL_2018/Mapping/SamFiles/$stub.sort.bam $gff > /N/dc2/scratch/ss93/shared_files/mdibl/MDIBL_2018/Counts/$stub.counts
+htseq-count -f bam -r pos -s no -m intersection-nonempty -t exon -i Parent ../Mapping/SamFiles/$stub.sort.bam $gff > ../Counts/$stub.counts
