@@ -1,5 +1,5 @@
-# MDIBL_pipeline_for_counts
-Pipeline setup for MDIBL automated scripts for raw seq to counts 
+# Genome Guided Counts
+Workflow setup for automated scripts for raw seq to counts, based on methods developed for MDIBL Environmental Genetics Workshop  
 
 1. Place genome in Reference directory.  You will need a genome in fasta format, a gff of gene locations, and a splice sites file.  Examples for Daphnia are provide for formatting guidance.
 
