@@ -8,17 +8,17 @@
 module load samtools
 module load hisat2
 
-ref=/N/dc2/scratch/ss93/shared_files/mdibl/MDIBL_2018/Reference/dpulex_genome
-splicesites=/N/dc2/scratch/ss93/shared_files/mdibl/MDIBL_2018/Reference/splicesites.txt
+ref=../Reference/dpulex_genome
+splicesites=../Reference/splicesites.txt
 
 stub=
 
-reads="/N/dc2/scratch/ss93/shared_files/mdibl/MDIBL_2018/Raw_Sequences/"
+reads="../Raw_Sequences/"
 left="_R1_001.fastq.gz"
 right="_R2_001.fastq.gz"
 
-sam=/N/dc2/scratch/ss93/shared_files/mdibl/MDIBL_2018/Mapping/SamFiles/$stub.sam
-summary=/N/dc2/scratch/ss93/shared_files/mdibl/MDIBL_2018/Mapping/SummaryFiles/$stub.hisat2.summary
+sam=../Mapping/SamFiles/$stub.sam
+summary=../Mapping/SummaryFiles/$stub.hisat2.summary
 
 hisat2 -p 2 -x $ref --known-splicesite-infile $splicesites -1 $reads$stub$left -2 $reads$stub$right -S $sam --max-intronlen 5000 --new-summary --summary-file $summary
 
