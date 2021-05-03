@@ -1,9 +1,15 @@
 #!/bin/bash
-#PBS -k oe
-#PBS -m abe
-#PBS -M ss93@iu.edu
-#PBS -N hisat2&
-#PBS -l nodes=1:ppn=2,vmem=10gb,walltime=3:00:00
+
+#SBATCH -J hisat2&
+#SBATCH -p general
+#SBATCH -o hisat2&_%j.txt
+#SBATCH -e hisat2&_%j.err
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=
+#SBATCH --nodes=1
+#SBATCH --mem=50gb
+#SBATCH --ntasks-per-node=2
+#SBATCH --time=03:00:00
 
 module load samtools
 module load hisat2
